@@ -1,0 +1,41 @@
+.conversation-card {
+  background-color: #ddd;
+  user-select: none;
+}
+
+.index {
+  font-size: 0.8rem;
+}
+
+.card-title {
+  transition: all 450ms;
+}
+
+.card-title:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 450ms;
+  text-decoration: underline;
+}
+
+.trash {
+  color: red;
+  transition: all 450ms;
+}
+
+.trash:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 450ms;
+}
+
+.star {
+  color: orange;
+  transition: all 450ms;
+}
+
+.star:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 450ms;
+}

@@ -1,0 +1,14 @@
+body {
+  background-color: #eee;
+}
+
+.homepage {
+  max-width:  620px;
+  width: 100%;
+  background: #fff;
+}
+
+.panel {
+  height: 100%;
+  overflow: auto;
+}
