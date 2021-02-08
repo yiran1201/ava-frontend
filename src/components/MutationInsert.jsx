@@ -21,7 +21,7 @@ const MutationInsert = (props) => {
     await axios.post(API.POST_MUTATION, mutation);
     setIndex(0);
     setText('');
-    socket.emit('syncConversation', conversationId);
+    socket.emit('syncConversationOnServer', conversationId);
   };
 
   return (

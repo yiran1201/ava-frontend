@@ -19,7 +19,7 @@ const ConversationCard = (props) => {
   };
 
   const updateConversation = () => {
-    socket.on('updateConversation', (data) => {
+    socket.on('syncConversationOnClient', (data) => {
       const {id, text} = data;
       if (id !== conversation.id) return;
       setText(text);

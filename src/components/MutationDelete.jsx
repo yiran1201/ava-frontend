@@ -21,7 +21,7 @@ const MutationDelete = (props) => {
     await axios.post(API.POST_MUTATION, mutation);
     setIndex(0);
     setLength(1);
-    socket.emit('syncConversation', conversationId);
+    socket.emit('syncConversationOnServer', conversationId);
   };
 
   return (

@@ -9,7 +9,7 @@ const InfoPanel = (props) => {
   const addConversation = async () => {
     await axios.post(API.ADD_CONVERSATION, {text: text.trim()});
     setText('');
-    socket.emit('syncConversations');
+    socket.emit('syncConversationsOnServer');
   };
 
   return (

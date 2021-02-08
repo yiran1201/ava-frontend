@@ -33,7 +33,7 @@ const MutationEditor = (props) => {
   };
 
   const updateConversation = () => {
-    socket.on('updateConversation', (conversation) => {
+    socket.on('syncConversationOnClient', (conversation) => {
       const {mutations, text, origin} = conversation;
       setText(text);
       setMutations(mutations);

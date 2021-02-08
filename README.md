@@ -108,41 +108,36 @@ DELETE / conversations
 
 #### UI Design
 
-- TODO
+- Use bootstrap for column layout to define the home page into three sections from left to right as conversation cards, mutation dashboard and info panel with buttons to add and reset conversation.
 
+- For the conversation card, there are a total of 20 conversations displayed. The most recent conversation is listed from top according to the latest post conversation request. For each conversation card, there is a trash bin icon and star icon for delete and like the conversation. The like feature is also associated with the info display section which tells you the total number of your liked conversations.
+
+- For mutation dashboard, each conversation has its unique id to help identify the conversation you are working on. In the middle of the mutation dashboard, there is a text area to display the current state of the sentence. Below the text area there is a mutation history section to display and track users (Bob and Alice) each step for editing the conversation and count for each state after editing. At the bottom of the mutation dashboard, there is a green button for insert text based on index and a red button for delete text based on index and length.
+
+- For the info panel section, it shows the total number of conversations and total number of liked conversations. At the bottom of this section there is an input area for users to enter text and send by using the "Add Conv" button. The conversation will also be updated on the conversation card after hitting the "Add Conv" button. Below the "Add Conv" button, there is a "Reset Convs" button to override the previous conversation card and generate 20 random conversations for presenting and testing purposes. And there is a "Del convs" button to delete all the conversation on conversation cards.
 #### Front End
 
 :white_check_mark: Frontend is written in React + Create React App(CRA) SPA setup.
 
 :white_check_mark: Front End(static build) + Backend (NodeJS) deployed on Google Cloud Platform for the sake of: 1. better logging (compare to AWS) 2. better version management system(compare to both) 3. stable up time(compare to Heroku).
 
-:white_check_mark: Assignment answer on [GET / info](https://ava-yiranchen.uc.r.appspot.com/info)
+:white_check_mark: Assignment answer on [GET / info](https://ava-yiranchen.uc.r.appspot.com/info)https://github.com/yiran1201/ava-frontend
 
 :white_check_mark: See the list of all the conversations
-![alt text][conversations]
-
-[conversations](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612657306/ava/screenshot-localhost-3000-bob-1612657068251_rnzct0.png)
+![conversations](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612657306/ava/screenshot-localhost-3000-bob-1612657068251_rnzct0.png)
 
 :white_check_mark: Delete a conversation
 
-![alt text][delete-conversation]
-
-[delete-conversation](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612657677/ava/screenshot-localhost-3000-bob-1612657592282_due0ma.png)
+![delete-conversation](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612657677/ava/screenshot-localhost-3000-bob-1612657592282_due0ma.png)
 
 :white_check_mark: Star / Un-star a conversation (locally only)
-![alt text][star-conversation]
-
-[star-conversation](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612657927/ava/screenshot-localhost-3000-bob-1612657870132_vf4ujb.png)
+![star-conversation](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612657927/ava/screenshot-localhost-3000-bob-1612657870132_vf4ujb.png)
 
 :white_check_mark: Select a conversation and visualize the ALL mutation history on this conversation.
-![alt text][select-conversation]
-
-[select-conversation](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612658087/ava/screenshot-localhost-3000-bob-1612658028536_x07ya2.png)
+![select-conversation](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612658087/ava/screenshot-localhost-3000-bob-1612658028536_x07ya2.png)
 
 :white_check_mark: Select a conversation and visualize in real time the modifications that applied on this conversation.
-![alt text][realtime-conversation]
-
-[realtime-conversation](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612658341/ava/screenshot-localhost-3000-bob-1612658153635_vi6bxw.png)
+![realtime-conversation](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612658341/ava/screenshot-localhost-3000-bob-1612658153635_vi6bxw.png)
 
 #### Backend
 
@@ -182,9 +177,7 @@ app.use(cors());
 - Notice: This setup is by purpose (though is not ideal in terms of safety concern); it is just easier, in case you want to access the server from ANYWHERE, the normal way way to handle it is to setup a whitelist.
 
 :white_check_mark: Return 400 errors when http requests are invalid.
-![alt text][invalid-response]
-
-[invalid-response](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612659787/ava/Screen_Shot_2021-02-06_at_5.01.38_PM_wmbfzd.png)
+![invalid-response](https://res.cloudinary.com/dgiji0wxc/image/upload/v1612659787/ava/Screen_Shot_2021-02-06_at_5.01.38_PM_wmbfzd.png)
 
 ## Implement Example
 

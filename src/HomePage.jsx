@@ -28,7 +28,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    socket.emit('syncConversations');
+    socket.emit('syncConversationsOnServer');
     getConversations();
     handleUrl();
   }, []);
@@ -52,13 +52,13 @@ const HomePage = () => {
   };
 
   const getConversations = () => {
-    socket.on('retrieveConversations', (data) => {
+    socket.on('syncConversationsOnClient', (data) => {
       setConversations(data);
     });
   };
 
   const listenConversationDeletion = () => {
-    socket.on('clearConversation', (deletedId) => {
+    socket.on('deleteConversationOnClient', (deletedId) => {
       if (deletedId === conversationId) setConversationId('');
     });
   };
@@ -79,27 +79,22 @@ const HomePage = () => {
 
   const delConversations = async () => {
     await axios.delete(API.DELETE_CONVERSATIONS);
-    socket.emit('syncConversations');
+    socket.emit('syncConversationsOnServer');
     setLikes(new Set());
     setConversationId('');
   };
 
   const resetConversations = async () => {
     await axios.get(API.RESET_CONVERSATIONS);
-    socket.emit('syncConversations');
+    socket.emit('syncConversationsOnServer');
     setLikes(new Set());
     setConversationId('');
   };
 
   const delConversation = async (id) => {
     await axios.delete(`${API.DELETE_CONVERSATION}/${id}`);
-    socket.emit('syncConversations');
-    socket.emit('deleteConversation', id);
-    if (likes.has(id)) {
-      const newLikes = new Set(likes);
-      newLikes.delete(id);
-      setLikes(newLikes);
-    }
+    socket.emit('syncConversationsOnServer');// update left panel
+    socket.emit('deleteConversationOnServer', id);// update middle panel
   };
 
   return (
