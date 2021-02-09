@@ -38,7 +38,7 @@ const ConversationCard = (props) => {
       <div className='text-muted index'>{`#${index + 1}`}</div>
       <div>
         <span className='card-title' onClick={onConversation}>
-          {text}
+          {text.length > 60 ? text.slice(0, 60) + '...' : text}
         </span>
       </div>
       <div className='d-flex justify-content-end'>
